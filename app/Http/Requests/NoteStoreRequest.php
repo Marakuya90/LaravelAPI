@@ -13,7 +13,7 @@ class NoteStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class NoteStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'full_name' => 'required|max:255',
+            'company' => 'max:255',
+            'telephone' => 'required|max:255',
         ];
     }
 }
