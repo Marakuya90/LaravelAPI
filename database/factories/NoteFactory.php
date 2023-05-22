@@ -17,7 +17,12 @@ class NoteFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'full_name' => $this->faker->name,
+            'company' => $this->faker->company,
+            'telephone' => $this->faker->phoneNumber,
+            'email' => $this->faker->email,
+            'DOB' => $this->faker->date,
+            'foto' => $this->faker->imageUrl
         ];
     }
 }

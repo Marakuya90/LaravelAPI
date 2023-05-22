@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Api\DeskController;
+use \App\Http\Controllers\Api\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,6 @@ use \App\Http\Controllers\Api\DeskController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/notebook', [DeskController::class, 'index']);
+Route::apiResources([
+    'notebook' => NoteController::class,
+]);
